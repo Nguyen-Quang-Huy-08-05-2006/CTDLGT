@@ -15,6 +15,6 @@ void cach1(int n)
 void cach2(int n)
 {
     int a = (n * (n + 1)) / 2;
-    printf("%d", &a);
+    printf("%d", a);
 }
 // Do phuc tap la o(1)
