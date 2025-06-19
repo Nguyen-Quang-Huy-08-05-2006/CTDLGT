@@ -13,10 +13,6 @@ int main()
         printf("Khong the cap phat bo nho.");
         return 1;
     }
-    else
-    {
-        printf("Cap phat bo nho thanh cong.\n");
-    }
 
     for (int i = 0; i < n; i++)
     {
@@ -24,10 +20,19 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    printf("Cac phan tu lon hon so dung sau la: ");
-    for (int i = 0; i < n - 1; i++)
+    printf("Cac phan tu lon hon tat ca phan tu dung sau la: ");
+    for (int i = 0; i < n; i++)
     {
-        if (arr[i] > arr[i + 1])
+        int isGreater = 1;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] <= arr[j])
+            {
+                isGreater = 0;
+                break;
+            }
+        }
+        if (isGreater)
         {
             printf("%d ", arr[i]);
         }

@@ -35,8 +35,6 @@ int main()
             if (arr[i] + arr[j] == total)
             {
                 printf("%d va %d co tong bang %d.\n", arr[i], arr[j], total);
-                free(arr);
-                return 0;
             }
         }
     }
