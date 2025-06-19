@@ -20,20 +20,14 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n / 2; i++)
     {
-        for (int j = i + 1; j < n; j++)
-        {
-            if (arr[i] > arr[j])
-            {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
+        int temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
     }
 
-    printf("Mang sau khi sap xep la: ");
+    printf("Mang sau khi dao nguoc la: ");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
