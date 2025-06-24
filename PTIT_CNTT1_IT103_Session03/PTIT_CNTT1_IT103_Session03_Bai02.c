@@ -6,7 +6,7 @@ int main()
     int n;
     int *arr;
     int tempN;
-    pprintf("Nhap so phan tu cua mang: ");
+    printf("Nhap so phan tu cua mang: ");
     scanf("%d", &tempN);
     if (tempN <= 0)
     {
