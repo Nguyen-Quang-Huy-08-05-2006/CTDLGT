@@ -13,13 +13,15 @@ int main()
     }
 
     int x = numbers[0];
+    int position = 0;
     for (int i = 0; i < n; i++)
     {
         if (numbers[i] > x)
         {
             x = numbers[i];
+            position = i;
         }
     }
-    printf("Phan tu lon nhat la %d.\n", x);
+    printf("Phan tu lon nhat la numbers[%d] = %d.\n", position, x);
     return 0;
 }
