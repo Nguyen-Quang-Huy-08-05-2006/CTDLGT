@@ -11,7 +11,7 @@ typedef struct student Student;
 
 int main()
 {
-    struct student students[5];
+    Student students[5];
     for (int i = 0; i < 5; i++)
     {
         printf("Nhap thong tin sinh vien [%d] :\n", i);

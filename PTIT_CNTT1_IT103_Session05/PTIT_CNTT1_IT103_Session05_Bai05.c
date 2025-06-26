@@ -1,29 +1,36 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-int sum(int char, int n)
+int isPalidrome(int left, int right, char *str)
 {
-    if (n < m)
+    if (left >= right)
+    {
+        return 1;
+    }
+    if (str[left] != str[right])
     {
         return 0;
     }
-    else
-    {
-        return n + sum(m, n - 1);
-    }
+    return isPalidrome(left + 1, right - 1, str);
 }
 
 int main()
 {
-    int char[1000];
-    printf("Nhap so thu nhat: ");
-    scanf("%d", &m);
-    printf("Nhap so thu hai: ");
-    scanf("%d", &n);
-    if (m < 0 || n < 0 || m > n)
+    char str[100];
+    printf("Nhap chuoi: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = 0;
+    size_t len = strlen(str);
+
+    if (isPalidrome(0, len - 1, str))
     {
-        printf("Khong hop le.\n");
-        return 1;
+        printf("Palindrome valid.\n");
     }
-    printf("%d", sum(m, n));
+    else
+    {
+        printf("Palindrome invalid.\n");
+    }
+
     return 0;
 }
