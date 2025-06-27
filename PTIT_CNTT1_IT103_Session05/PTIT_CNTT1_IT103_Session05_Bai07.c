@@ -19,7 +19,7 @@ int main()
         printf("Khong hop le");
         return 0;
     }
-    int fibonacciArray[100];
+    int fibonacciArray[n];
     for (int i = 0; i < n; i++)
     {
         fibonacciArray[i] = fibonacci(i);
