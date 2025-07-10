@@ -31,39 +31,12 @@ void enqueue(struct Queue *queue, int value)
     queue->array[queue->rear] = value;
 }
 
-int dequeue(struct Queue *queue)
+void printAll(struct Queue *queue)
 {
-    if (queue->rear < queue->front)
-    {
-        printf("queue is empty\n\n");
-        printf("queue = {\n");
-        printf("   array = [],\n");
-        printf("   front = %d,\n", queue->front);
-        printf("   rear = %d,\n", queue->rear);
-        printf("   capacity = %d\n", queue->maxSize);
-        printf("}\n");
-        return -1;
-    }
-
-    int value = queue->array[queue->front];
-    queue->front++;
-
-    printf("return value = %d;\n\n", value);
-    printf("queue = {\n");
-    printf("   array = [");
     for (int i = queue->front; i <= queue->rear; i++)
     {
-        printf("%d", queue->array[i]);
-        if (i < queue->rear)
-            printf(", ");
+        printf("%d ", queue->array[i]);
     }
-    printf("],\n");
-    printf("   front = %d,\n", queue->front);
-    printf("   rear = %d,\n", queue->rear);
-    printf("   capacity = %d\n", queue->maxSize);
-    printf("}\n");
-
-    return value;
 }
 
 int main()
@@ -75,7 +48,7 @@ int main()
     enqueue(myQueue, 5);
     enqueue(myQueue, 2);
 
-    dequeue(myQueue);
+    printAll(myQueue);
 
     free(myQueue->array);
     free(myQueue);
